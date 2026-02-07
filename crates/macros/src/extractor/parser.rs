@@ -1,5 +1,3 @@
-#![allow(unused)]
-
 use pest::{Parser, iterators::*};
 use pest_derive::Parser;
 use thiserror::Error;
@@ -163,8 +161,6 @@ impl<'a> TryFrom<Pair<'a, Rule>> for ast::Patterns<'a> {
 
 #[cfg(test)]
 mod tests {
-    use pest::Parser;
-
     use crate::extractor::parser::ast::AsType;
 
     use super::*;
