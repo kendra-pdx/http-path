@@ -1,0 +1,15 @@
+[package]
+name = "http-path-core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+defmt = { workspace = true, optional = true }
+frunk = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+rstest = { workspace = true }
+
+[features]
+defmt = ["dep:defmt"]

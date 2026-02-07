@@ -1,0 +1,6 @@
+ident = { ASCII_ALPHANUMERIC+ }
+as_type = { "str" | "u32" }
+literal = { ident ~ (":" ~ as_type)? }
+variable = { "{" ~ as_type ~ "}" }
+pattern = _{ literal | variable }
+patterns = { pattern ~ ("/" ~ pattern)* }
