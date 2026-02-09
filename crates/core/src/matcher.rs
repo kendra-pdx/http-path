@@ -68,17 +68,14 @@ where
 
         let (first, rest) = path.split_first()?;
 
-        let head_value = match &self.head {
+        let head = match &self.head {
             Pattern::Literal(lit, _) => T::from_str(first).filter(|t| t == lit)?,
             Pattern::Variable(_) => T::from_str(first)?,
         };
 
-        let tail_result = self.tail.extract(rest)?;
+        let tail = self.tail.extract(rest)?;
 
-        Some(HCons {
-            head: head_value,
-            tail: tail_result,
-        })
+        Some(HCons { head, tail })
     }
 }
 
